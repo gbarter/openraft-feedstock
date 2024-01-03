@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/OpenRAFT-{{ version }}.tar.gz
-  sha256: 59be0d0f26de22bf695e7b92bade6548afcafe22d341c00101c89d6cb615e515
+  sha256: 3938270dee95c4d950f9ab8c26fba9c46c455b33c5cb84495a917cb62a280e47
   
 build:
   noarch: python
