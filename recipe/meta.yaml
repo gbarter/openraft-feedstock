@@ -1,5 +1,5 @@
 {% set name = "OpenRAFT" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/OpenRAFT-{{ version }}.tar.gz
-  sha256: 3938270dee95c4d950f9ab8c26fba9c46c455b33c5cb84495a917cb62a280e47
+  sha256: b745021fa3033b227f12b806a8820b44813474091b5fbff6ea62150009e41544
 
 build:
   noarch: python
