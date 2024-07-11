@@ -22,7 +22,7 @@ requirements:
   run:
     - matplotlib-base
     - moorpy
-    - numpy
+    - numpy <2.0dev0
     - openmdao
     - pyhams
     - python >=3.9
