@@ -6,7 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/OpenRAFT-{{ version }}.tar.gz
+  url: https://github.com/WISDEM/RAFT/archive/v{{ version }}.tar.gz
+    # Download the tar-ball and do: openssl sha256 file.tar.gz to update
   sha256: b745021fa3033b227f12b806a8820b44813474091b5fbff6ea62150009e41544
 
 build:
