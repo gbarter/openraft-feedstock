@@ -1,13 +1,14 @@
 {% set name = "OpenRAFT" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/OpenRAFT-{{ version }}.tar.gz
-  sha256: 3938270dee95c4d950f9ab8c26fba9c46c455b33c5cb84495a917cb62a280e47
+  url: https://github.com/WISDEM/RAFT/archive/v{{ version }}.tar.gz
+    # Download the tar-ball and do: openssl sha256 file.tar.gz to update
+  sha256: b745021fa3033b227f12b806a8820b44813474091b5fbff6ea62150009e41544
 
 build:
   noarch: python
@@ -22,7 +23,7 @@ requirements:
   run:
     - matplotlib-base
     - moorpy
-    - numpy
+    - numpy <2.0dev0
     - openmdao
     - pyhams
     - python >=3.9
