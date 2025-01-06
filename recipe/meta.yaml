@@ -13,11 +13,11 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
@@ -26,12 +26,14 @@ requirements:
     - numpy <2.0dev0
     - openmdao
     - pyhams
-    - python >=3.9
+    - python >={{ python_min }}
     - pyyaml
     - scipy
     - wisdem
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - raft
 
