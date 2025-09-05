@@ -1,5 +1,5 @@
 {% set name = "OpenRAFT" %}
-{% set version = "1.4.1" %}
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   url: https://github.com/WISDEM/RAFT/archive/v{{ version }}.tar.gz
     # Download the tar-ball and do: openssl sha256 file.tar.gz to update
-  sha256: f4c9e6d1ac6f572d3785183393dd7db0bec9bb4e8340e7ee75a3d8ee4e93830c
+  sha256: ada1ed0f8ed0bc22e3e37e5c2a9ce542f7a33973410cefb82ca13a4382d7c521
 
 build:
   noarch: python
@@ -23,19 +23,30 @@ requirements:
   run:
     - matplotlib-base
     - moorpy
-    - numpy <2.0dev0
+    - numpy
     - openmdao
     - pyhams
     - python >={{ python_min }}
     - pyyaml
+    - ruamel.yaml
     - scipy
     - wisdem
 
 test:
+  # Imports won't work without ORBIT  
+  #imports:
+  #  - raft
   requires:
+    - pip
     - python {{ python_min }}
-  imports:
+  source_files:
     - raft
+    - examples
+  commands:
+    - pip install orbit-nrel
+    - cd examples
+    - python example_from_yaml.py false
+    - cd ..
 
 about:
   home: https://github.com/wisdem/raft
